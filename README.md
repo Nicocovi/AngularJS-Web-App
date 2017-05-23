@@ -1,2 +1,8 @@
-# Plan your trip with Kira
-Software Engineering Web Application Repo
+# AngularJS Web App
+Web Application Repo
+
+will use:
+
+AngularJS
+NodeJS (Express,Mongoose)
+MongoDB
