@@ -1,8 +1,8 @@
 // Load required packages
 var mongoose = require('mongoose');
 
-// Define our movie schema
-var Trip = new mongoose.Schema({
+// Define our event schema
+var Event = new mongoose.Schema({
     name: String,
     destination: String,
     startDate: Date,
@@ -33,4 +33,4 @@ var Trip = new mongoose.Schema({
 });
 
 // Export the Mongoose model
-module.exports = mongoose.model('Trip', Trip);
+module.exports = mongoose.model('Event', Event);
