@@ -1,0 +1,53 @@
+{
+  "name": "planyourtripwithkira-frontend",
+  "version": "1.0.0",
+  "description": "Plan your trip application based on AngularJS 1.5+",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Team 35",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-exec": "^2.1.3",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "http-server": "^0.9.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.0",
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-material": "^1.1.4",
+    "angular-material-expansion-panel": "^0.7.2",
+    "angular-material-icons": "^0.7.1",
+    "angular-messages": "^1.5.8",
+    "angularjs-slider": "^6.2.2",
+    "node-googleplaces": "0.1.2"
+  },
+  "engines": {
+    "node": ">=4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1 ./dist"
+  }
+}
