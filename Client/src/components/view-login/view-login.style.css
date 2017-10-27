@@ -1,0 +1,32 @@
+body{
+	background-color: #F0F0F0;
+}
+
+.login-form md-card {
+    padding: 0 !important;
+	background-color: #FFFFFF;
+	/*border: 1px solid #404040; */
+}
+
+
+.login-form md-card md-card-title {
+    background-color: blue;
+}
+
+#login-form form input{
+
+}
+
+#buttons-container{
+	float: right;
+}
+
+.loginbutton{
+	background-color: #17304B !important;
+	color: #FFFFFF !important;
+}
+
+.registerbutton{
+	background-color: #14C98C !important;
+	color: #FFFFFF !important;
+}

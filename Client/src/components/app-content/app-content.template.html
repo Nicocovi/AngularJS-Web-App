@@ -1,0 +1,13 @@
+<div ng-class="{'my-landingpage': $ctrl.$state.includes('landingpage')}" layout="row" layout-fill ng-cloak>
+    <div layout="column" flex>
+        <app-header></app-header>
+        <md-content>
+            <div flex layout-gt-sm="row">
+                <span class="my-flexible-side-margin" flex="5"></span>
+                <ui-view flex id="main-content-view"></ui-view>
+                <span class="my-flexible-side-margin" flex="5"></span>
+            </div>
+            <app-footer></app-footer>
+        </md-content>
+    </div>
+</div>

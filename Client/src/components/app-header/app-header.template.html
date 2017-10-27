@@ -1,0 +1,49 @@
+<md-toolbar id="my-header-toolbar" md-whiteframe="3" change-header-class-on-scroll scroll-class="my-solidheader">
+    <div class="md-toolbar-tools ">
+
+        <a ui-sref="landingpage " layout="row ">
+            <image class="my-header-image" aria-label="Logo" src="./images/favicon/icon.svg " />
+            <h2 class="my-header-text hide-xs " ng-if="$ctrl.getSubtitle()===null">Plan your trip with Kira</h2>
+            <h2 class="my-header-text my-header-subtitle" ng-if="$ctrl.getSubtitle()!==null">{{$ctrl.getSubtitle()}}</h2>
+        </a>
+
+        <span flex></span>
+
+        <span flex="5 "></span>
+
+        <md-button ng-if="!$ctrl.isAuthenticated() && !$ctrl.$state.includes('login')" aria-label="Login " class="md-raised md-primary " ng-click="$ctrl.login($event) ">
+            Login
+        </md-button>
+
+        <md-menu ng-if="$ctrl.isAuthenticated() " md-position-mode="target-right target ">
+            <md-button aria-label="More " ng-click="$ctrl.openMenu($mdMenu, $event) ">
+                <span class="my-btn-no-uppercase">
+                    {{$ctrl.getCurrentUser()}}
+                </span>
+                <md-icon>
+                    <ng-md-icon icon="account_circle"></ng-md-icon>
+                </md-icon>
+            </md-button>
+            <md-menu-content width="4 ">
+                <md-menu-item>
+                    <md-button ng-click="$ctrl.myTrips()">
+                        <md-icon md-menu-align-target>
+                            <ng-md-icon icon="dashboard" aria-label="Dashboard"></ng-md-icon>
+                        </md-icon>
+                        My Trips
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button ng-click="$ctrl.logout($event) ">
+                        <md-icon md-menu-align-target>
+                            <ng-md-icon icon="logout" aria-label="Logout"></ng-md-icon>
+                        </md-icon>
+                        Logout
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+
+    </div>
+</md-toolbar>

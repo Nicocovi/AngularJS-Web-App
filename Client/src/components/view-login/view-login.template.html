@@ -1,0 +1,30 @@
+<div layout="column" layout-padding="">
+    <span flex="20"></span>
+    <md-content class="login-form" layout="row" flex="35" ng-if="!$ctrl.isAuthenticated()">
+        <span flex="35"></span>
+        <md-card flex="30">
+            <md-card-content>
+                <form name="LoginForm" ng-keypress="($event.charCode==13)? $ctrl.submit() : return">
+                    <md-input-container class="md-block">
+                        <input type="text" name="email" ng-model="$ctrl.login.email" placeholder="email" required="" />
+                        <div ng-messages="LoginForm.email.$error" role="alert" multiple="">
+                            <div ng-message="required">Please enter your email.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <input type="password" name="password" ng-model="$ctrl.login.password" placeholder="password" required="" md-maxlength="64" />
+                        <div ng-messages="LoginForm.password.$error" role="alert" multiple="">
+                            <div ng-message="required">Please enter your password.</div>
+                        </div>
+                    </md-input-container>
+                    <div id="buttons-container">
+                        <md-button ng-click="$ctrl.register()" class="md-raised md-primary registerbutton">&nbsp Register &nbsp</md-button>
+                        <md-button ng-disabled="!LoginForm.$valid" type="button" ng-click="$ctrl.submit()" class="md-raised md-primary loginbutton">&nbsp Login &nbsp</md-button>
+                    </div>
+                </form>
+            </md-card-content>
+        </md-card>
+        <span flex></span>
+    </md-content>
+    <span flex></span>
+</div>

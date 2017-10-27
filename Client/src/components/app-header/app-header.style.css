@@ -1,0 +1,71 @@
+.md-button.md-default-theme.md-accent:not([disabled]) md-icon,
+.md-button.md-accent:not([disabled]) md-icon {
+    color: inherit;
+}
+
+md-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected,
+md-nav-bar .md-button._md-nav-button.md-unselected {
+    color: inherit;
+}
+
+.md-button.md-default-theme.md-accent,
+.md-button.md-accent {
+    color: #ffffff;
+}
+
+app-header>md-toolbar,
+app-header>md-toolbar>.md-toolbar-tools {
+    min-height: 50px;
+    height: 50px;
+}
+
+md-nav-bar.md-default-theme md-nav-ink-bar,
+md-nav-bar md-nav-ink-bar {
+    color: #ffffff;
+    background: #ffffff;
+}
+
+
+/* custom CSS */
+
+app-header md-toolbar._md-toolbar-transitions {
+    transition: none;
+}
+
+.my-landingpage app-header md-toolbar {
+    position: fixed;
+}
+
+.my-landingpage app-header md-toolbar:not(.my-solidheader) {
+    position: fixed;
+    background-color: transparent;
+    height: 5em;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: none;
+}
+
+.my-header-image {
+    width: 2.5em;
+    max-height: 2.4em;
+    padding: 0.3em;
+    margin-top: 0.1em;
+}
+
+md-toolbar .my-header-text {
+    line-height: 2.5em;
+}
+
+.my-header-subtitle::before {
+    content: " ";
+    padding: 0.2em;
+    margin-left: 0.2em;
+    border-left: 1px solid white;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.my-btn-no-uppercase {
+    text-transform: none;
+}

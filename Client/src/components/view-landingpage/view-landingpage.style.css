@@ -1,0 +1,164 @@
+.layout-align-center-center {
+    text-align: center;
+}
+
+
+/* custom CSS */
+
+.my-slideshow {
+    overflow: hidden;
+    margin-bottom: -10px;
+}
+
+.my-slideshow img {
+    position: absolute;
+    width: 100%;
+}
+
+.my-slideshow.my-animation-slide-next .my-animation img {
+    animation: slide-next-in 0.5s;
+}
+
+.my-slideshow.my-animation-slide-next .my-animation img.ng-hide {
+    animation: slide-next-out 0.5s;
+}
+
+.my-slideshow.my-animation-slide-prev .my-animation img {
+    animation: slide-prev-in 0.5s;
+}
+
+.my-slideshow.my-animation-slide-prev .my-animation img.ng-hide {
+    animation: slide-prev-out 0.5s;
+}
+
+@keyframes slide-next-out {
+    0% {
+        margin-left: -0%;
+    }
+    100% {
+        margin-left: -100%;
+    }
+}
+
+@keyframes slide-next-in {
+    0% {
+        margin-left: 100%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes slide-prev-out {
+    0% {
+        margin-left: 0%;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes slide-prev-in {
+    0% {
+        margin-left: -100%;
+    }
+    100% {
+        margin-left: -0%;
+    }
+}
+
+.my-slideshow .arrow {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    top: 0;
+    padding: 25% 1em;
+    font-size: 2.5em;
+}
+
+.my-slideshow .arrow.prev {
+    left: 0;
+    padding-right: 15%;
+}
+
+.my-slideshow .arrow.next {
+    right: 0;
+    padding-left: 30%;
+}
+
+.my-slideshow nav {
+    height: 0;
+    position: relative;
+    top: -3.5em;
+}
+
+.my-slideshow nav .dots {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.my-slideshow nav .dot {
+    display: inline-block;
+    width: 1.5em;
+    height: 2em;
+    overflow: hidden;
+}
+
+.my-slideshow nav .dot a {
+    color: transparent;
+}
+
+.my-slideshow nav .dot a::before {
+    opacity: 0.5;
+    color: white;
+    content: "\2022";
+    font-size: 2em;
+}
+
+.my-slideshow nav .dot a.active::before {
+    opacity: 1;
+}
+
+.my-big-button {
+    font-size: 1.2em;
+    padding: 0.5em 2em;
+    margin: 3.5em 1em;
+    transition: font-size 0.3s;
+}
+
+@media screen and (max-width: 600px) {
+    .my-big-button {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .my-big-button {
+        font-size: 0.9em;
+    }
+}
+
+.my-big-tile {
+    margin: 3.5em 2.5em;
+}
+
+.my-citation-text {
+    font-size: 1.5em;
+}
+
+.my-citation-text::before,
+.my-citation-text::after {
+    content: '"';
+}
+
+.my-citation-author {
+    opacity: 0.7;
+    text-align: right;
+}
+
+.my-separator-text-big {
+    font-size: 1.2em;
+    padding: 0.5em;
+}

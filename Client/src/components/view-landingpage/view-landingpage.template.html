@@ -1,0 +1,109 @@
+<md-content id="my-landingpage-slideshow" class="my-slideshow" ng-class="{'my-animation-slide-next': $ctrl.animationType===1, 'my-animation-slide-prev': $ctrl.animationType===2}">
+    <div ng-style="{ height: (width / 2.124) + 'px' }" ng-class="{'my-animation': $ctrl.doAnimation===true}" resizeable>
+        <img ng-repeat="slide in slides" class="slide" ng-src="{{slide.image}}" ng-hide="!$ctrl.isCurrentSlideIndex($index)">
+    </div>
+
+    <a class="arrow prev" href="#" ng-click="$ctrl.prevSlide()">&lt;</a>
+    <a class="arrow next" href="#" ng-click="$ctrl.nextSlide()">&gt;</a>
+
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="slide in slides">
+                    <a href="#" ng-class="{'active':$ctrl.isCurrentSlideIndex($index)}" ng-click="$ctrl.setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</md-content>
+
+<md-content>
+    <div layout="row" layout-align="center center " md-colors="::{background: 'primary-500'}">
+        <!-- Action Button - Colored Background -->
+        <md-button aria-label="Create your first trip " class="my-big-button md-raised md-accent" ng-click="$ctrl.gotoCreateTrip($event) ">
+            Create your first trip
+        </md-button>
+    </div>
+
+    <div layout="row" layout-align="center center ">
+        <!-- Key Functions as Columns With header Icon - White Background -->
+        <div layout="row" layout-sm="column" layout-xs="column">
+            <span flex="10"></span>
+            <div flex class="my-big-tile" layout-align="center center ">
+                <p>
+                    <ng-md-icon icon="explore" aria-label="Explore" size="96"></ng-md-icon>
+                </p>
+                <span>Use our powerful search engine to find points-of-interest, accomodation, bars and resturants all over the world.</span>
+            </div>
+            <div flex class="my-big-tile" layout-align="center center ">
+                <p>
+                    <ng-md-icon icon="stars" aria-label="Star" size="96"></ng-md-icon>
+                </p>
+                <span>Rate and prioritize activities and display general tripadvidor ratings all in one view.</span>
+            </div>
+            <div flex class="my-big-tile" layout-align="center center ">
+                <p>
+                    <ng-md-icon icon="group" aria-label="Group" size="96"></ng-md-icon>
+                </p>
+                <span>Collaborative work together with your friends on the same trip to plan your individual route.</span>
+            </div>
+            <span flex="10"></span>
+        </div>
+    </div>
+
+    <div layout="row " layout-sm="column" layout-xs="column" layout-align="center center " md-colors="::{background: 'accent-500'}">
+        <!-- Zitat - Colored Background -->
+        <span flex="10"></span>
+        <div class="my-big-tile">
+            <blockquote>
+                <span class="my-citation-text">The best tool I ever used to plan my trips all over the world!</span>
+                <p class="my-citation-author">Lisa, Australian Travel Blogger</p>
+            </blockquote>
+        </div>
+        <span flex="10"></span>
+    </div>
+
+    <div layout="row" layout-align="center center ">
+        <!-- Key Functions as Columns With header Icon - White Background -->
+        <div layout="row" layout-sm="column" layout-xs="column">
+            <span flex="10"></span>
+            <div flex class="my-big-tile" layout-align="center center ">
+                <p>
+                    <ng-md-icon icon="lightbulb_outline" aria-label="Idea" size="96"></ng-md-icon>
+                </p>
+                <span>Make use of personalized suggestions and save time.</span>
+            </div>
+            <div flex class="my-big-tile" layout-align="center center ">
+                <p>
+                    <ng-md-icon icon="cloud_download" aria-label="Save offline" size="96"></ng-md-icon>
+                </p>
+                <span>Export your final shedule to have it always at your hand, even if you are offline.</span>
+            </div>
+            <div flex class="my-big-tile" layout-align="center center ">
+                <p>
+                    <ng-md-icon icon="timeline" aria-label="Timeline" size="96"></ng-md-icon>
+                </p>
+                <span>Get your final timetable and route sheduled automatically.</span>
+            </div>
+            <span flex="10"></span>
+        </div>
+    </div>
+
+    <div layout="row" layout-align="center center " md-colors="::{background: 'primary-500'}">
+        <!-- Action Button - Colored Background -->
+        <div ng-if="!$ctrl.isAuthenticated()">
+            <md-button aria-label="Sign Up" class="my-big-button md-raised" ng-click="$ctrl.gotoLogin($event) ">
+                Login
+            </md-button>
+            <span class="my-separator-text-big">or</span>
+            <md-button aria-label="Sign Up" class="my-big-button md-raised md-accent" ng-click="$ctrl.gotoSignUp($event) ">
+                Sign Up
+            </md-button>
+        </div>
+        <div ng-if="$ctrl.isAuthenticated()">
+            <md-button aria-label="Display my trips" class="my-big-button md-raised md-accent" ng-click="$ctrl.gotoMyTrips($event) ">
+                Display My Trips
+            </md-button>
+        </div>
+    </div>
+
+</md-content>

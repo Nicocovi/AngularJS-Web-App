@@ -1,0 +1,24 @@
+body {
+    background: transparent;
+}
+
+.my-landingpage md-content .my-flexible-side-margin {
+    display: none;
+}
+
+.md-button.md-fab.md-fab-bottom-right,
+.md-button.md-fab.md-fab-bottom-left {
+    position: fixed !important;
+}
+
+.my-landingpage app-header+md-content {
+    height: auto;
+}
+
+app-header+md-content {
+    height: calc(100% - 50px);
+}
+
+md-content>div {
+    min-height: 100%;
+}
