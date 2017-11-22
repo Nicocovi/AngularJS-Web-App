@@ -26,47 +26,58 @@ var hasUserPermission = function (event, user) {
 var createEventReplacingEmails = function (req, res, callbackAction) {
     var newEventData = JSON.parse(JSON.stringify(req.body));
     newEventData.users = [];
-    console.log(req.body.users);
-    req.body.users.forEach(function (userEmail, idx, users) {
-        User.findOne({
-            email: userEmail
-        }, function (err, user) {
-            if (user) {
-                newEventData.users.push(user._id);
-                if (idx === users.length - 1) {
-                    var event = new Event(newEventData);
-                    callbackAction(req, res, event);
+    console.log("Users: ",req.body.users);
+    if(req.body.users.length == 0){ //typeof req.body.users !== 'undefined' &&
+        var event = new Event(req.body);
+        event.save(function (err, m) {
+                if (err) {
+                    res.status(400).send(err);
+                    return;
                 }
-
-            } else {
-                var user = new User();
-                user.email = userEmail;
-                user.password = "";
-
-                user.save(function (err, succ) {
-                    if (err) {
-                        res.status(500).send(err);
-                        return;
-                    }
-                    if (succ) {
-                        //console.log(succ._id);
-                        newEventData.users.push(succ._id);
-                        //TODO
-                        //callback problem
-                        //user wird erst nach callback erstellt.
+                res.status(201).json(m);
+            });
+    }else{
+        req.body.users.forEach(function (userEmail, idx, users) {
+                User.findOne({
+                    email: userEmail
+                }, function (err, user) {
+                    if (user) {
+                        newEventData.users.push(user._id);
                         if (idx === users.length - 1) {
                             var event = new Event(newEventData);
                             callbackAction(req, res, event);
                         }
-                    }
-                });
-            }
-            if (err) {
-                console.log("Error in eventController createEventReplacingEmails");
-            }
 
-        });
-    });
+                    } else {
+                        var user = new User();
+                        user.email = userEmail;
+                        user.password = "";
+
+                        user.save(function (err, succ) {
+                            if (err) {
+                                res.status(500).send(err);
+                                return;
+                            }
+                            if (succ) {
+                                //console.log(succ._id);
+                                newEventData.users.push(succ._id);
+                                //TODO
+                                //callback problem
+                                //user wird erst nach callback erstellt.
+                                if (idx === users.length - 1) {
+                                    var event = new Event(newEventData);
+                                    callbackAction(req, res, event);
+                                }
+                            }
+                        });
+                    }
+                    if (err) {
+                        console.log("Error in eventController createEventReplacingEmails");
+                    }
+
+                });
+            });
+    }
 };
 
 exports.postEvent = function (req, res) {

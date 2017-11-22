@@ -5,9 +5,17 @@ var mongoose = require('mongoose');
 var Event = new mongoose.Schema({
     name: String,
     location: String,
-    startDate: Date,
-    endDate: Date,
-    creator: mongoose.Schema.Types.ObjectId
+    startDate: String,
+    endDate: String,
+    startTime: String,
+    endTime: String,
+    users: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
+    creator: String //mongoose.Schema.Types.ObjectId
 });
 
 // Export the Mongoose model
