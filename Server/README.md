@@ -57,7 +57,7 @@ content-type application/json
 	Body: 
 ```		
 		{
-		"username": "xxx",
+		"email": "xxx",
 	
 		"password": "xxx"
 		}
@@ -65,7 +65,7 @@ content-type application/json
 
 2.	Copy access tokes from result.
 
-3. 	GET: http://localhost:3000/api/user/trips
+3. 	GET: http://localhost:3000/api/user/event
 	Header: 
 ```
 content-type application/json
