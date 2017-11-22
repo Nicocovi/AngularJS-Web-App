@@ -7,8 +7,6 @@ import angularMaterial from 'angular-material';
 import 'angular-material/angular-material.css';
 
 import rzslider from 'angularjs-slider';
-import './components/view-trip-create/rzslider.css';
-import './components/view-trip-create/view-trip-create.style.css';
 
 import ngMdIcons from 'angular-material-icons';
 import angularMaterialExpansionPanel from 'angular-material-expansion-panel';
@@ -18,6 +16,7 @@ import UserService from './services/user/user';
 
 import AppContent from './components/app-content/app-content';
 import ViewLandingpage from './components/view-landingpage/view-landingpage';
+import ViewLogin from './components/view-login/view-login';
 
 import Theme from './config/theme';
 import Routes from './config/routes';
@@ -37,6 +36,7 @@ let app = angular.module('app', [
     UserService.name,
     AppContent.name,
 	ViewLandingpage.name,
+	ViewLogin.name,
     rzslider
 ]);
 
