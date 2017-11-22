@@ -47,7 +47,29 @@ gulp
 
 ## API
 
-Retrieve trips of a specific user:
+### Sign up
+
+1. 	POST: http://localhost:3000/api/user/signup,
+	Header:
+```
+content-type application/json
+```
+	Body:
+```
+{
+    "email": "xxx",
+    "password": "xxx"
+}
+```
+
+    Answer:
+```
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..."
+}
+```
+
+### Retrieve events of a specific user:
 
 1. 	POST: http://localhost:3000/api/user/login, 
 	Header: 
