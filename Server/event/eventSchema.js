@@ -7,13 +7,7 @@ var Event = new mongoose.Schema({
     location: String,
     startDate: Date,
     endDate: Date,
-    creator: mongoose.Schema.Types.ObjectId,
-    users: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
-        }
-    ]
+    creator: mongoose.Schema.Types.ObjectId
 });
 
 // Export the Mongoose model

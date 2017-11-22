@@ -71,7 +71,8 @@ content-type application/json
 
 ### Retrieve events of a specific user:
 
-1. 	POST: http://localhost:3000/api/user/login, 
+1. 	POST: http://localhost:3000/api/user/login
+
 	Header: 
 ```
 content-type application/json
@@ -88,6 +89,7 @@ content-type application/json
 2.	Copy access tokes from result.
 
 3. 	GET: http://localhost:3000/api/user/event
+
 	Header: 
 ```
 content-type application/json
