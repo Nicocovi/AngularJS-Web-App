@@ -33,8 +33,10 @@ jwtConfig(passport);
  * routing
  */
 var userRoutes = require("./user/userRoutes");
+var tvRoutes = require("./tvcontroller/tvRoutes");
 
 app.use('/api/user', userRoutes(passport));
+app.use('/api/tv', tvRoutes());
 
 
 module.exports = app;
