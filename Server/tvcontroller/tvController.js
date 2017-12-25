@@ -1,8 +1,6 @@
-
+var sys = require('sys');
+var exec = require('child_process').exec;
     /*
-    var sys = require('sys');
-    var exec = require('child_process').exec;
-
     function puts(error, stdout, stderr) { sys.puts(stdout) }
     exec("~/path/to/nodejs/restartscript.sh", puts);
 
@@ -14,10 +12,12 @@
 
 module.exports.turnon = function (req, res) {
     console.log("turning on tv");
+    exec("echo on 0 | cec-client -s -d 1");
     return res.status(200).send("turning on tv");
 };
 
 module.exports.turnoff = function (req, res) {
     console.log("turning off tv");
+    exec("echo standby 0 | cec-client -s -d 1");
     return res.status(200).send("turning off tv");
 };
