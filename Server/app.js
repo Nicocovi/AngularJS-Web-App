@@ -38,5 +38,8 @@ var tvRoutes = require("./tvcontroller/tvRoutes");
 app.use('/api/user', userRoutes(passport));
 app.use('/api/tv', tvRoutes());
 
+//sending ip
+var ipcontroller = require("./ipcontroller/ipController");
+
 
 module.exports = app;
